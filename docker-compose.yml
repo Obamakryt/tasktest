@@ -1,0 +1,34 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: app1test
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: bosspass
+      POSTGRES_USER: boss
+      POSTGRES_DB: test
+    ports:
+      - "5443:5432"
+    volumes:
+      - postgres_data_app1:/var/lib/postgresql/data
+      - ./pkg/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+
+  app:
+    build: .
+    container_name: myapp
+    restart: unless-stopped
+    environment:
+      DB_HOST: postgres
+      DB_USER: boss
+      DB_PASSWORD: bosspass
+      DB_NAME: test
+    depends_on:
+      - postgres
+    volumes:
+      - ./uploads:/app/uploads
+    ports:
+      - "8081:8081"
+
+volumes:
+  postgres_data_app1:
