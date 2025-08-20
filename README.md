@@ -1,12 +1,12 @@
 Env file is visiable!
- internal
-├──  api           HTTP handlers + middleware
-├──  auth          Аутентификация
-├──  docks         Логика документов  
-├──  storage       PostgreSQL layer
-├──  cache         кеш
-└──  config        Конфигурация
-
+internal
+api           HTTP handlers + middleware
+auth          Аутентификация
+docks         Логика документов  
+storage       PostgreSQL layer
+cache         кеш
+config        Конфигурация
+cfg
 
 POST /api/register - Регистрация
 
