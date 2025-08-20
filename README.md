@@ -1,4 +1,5 @@
-Env file is visiable!
+##Env file is visiable!
+
 internal
 api           HTTP handlers + middleware
 auth          Аутентификация
