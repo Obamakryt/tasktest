@@ -1,13 +1,23 @@
-##Env file is visiable!
+
+**Env file is visible!**
+
 
 internal
+
 api           HTTP handlers + middleware
+
 auth          Аутентификация
+
 docks         Логика документов  
+
 storage       PostgreSQL layer
+
 cache         кеш
+
 config        Конфигурация
+
 cfg
+
 
 POST /api/register - Регистрация
 
@@ -15,16 +25,23 @@ POST /api/auth - Логин
 
 POST /api/auth/:token - Логаут
 
+
 Документы
+
 POST /api/docs - Загрузить документ
+
 HEAD  /api/docs - http.statusok
+
 GET /api/docs - Список документов
+
 HEAD /api/docs/:id - http.statusok
+
 GET /api/docs/:id - Получить документ
 
 DELETE /api/docs/:id - Удалить документ
 
 База данных
+
 PostgreSQL с таблицами:
 
 users - пользователи
